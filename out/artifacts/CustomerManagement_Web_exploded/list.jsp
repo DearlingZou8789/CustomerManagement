@@ -10,11 +10,21 @@
 <html>
 <head>
     <title>客户列表</title>
+    <style>
+        td{
+            text-align: center;
+            color: dodgerblue;
+        }
+        table{
+            border-spacing: 0px;
+        }
+    </style>
 </head>
 <body>
     <h3 align="center" >客户列表</h3>
     <table border="1" width="70%" align="center">
         <tr>
+            <th>序号</th>
             <th>客户姓名</th>
             <th>性别</th>
             <th>手机</th>
@@ -22,8 +32,9 @@
             <th>描述</th>
             <th>操作</th>
         </tr>
-        <c:forEach items="${pb.beanList}" var="cstm">
+        <c:forEach items="${pb.beanList}" var="cstm" varStatus="s">
         <tr>
+            <td>${pb.pr * (pb.pc - 1) + 1 + s.index }</td>
             <td>${cstm.name}</td>
             <td>${cstm.gender}</td>
             <td>${cstm.phone}</td>
