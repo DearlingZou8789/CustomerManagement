@@ -59,4 +59,9 @@ public class Customer
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        return "name: " + name + ", gender: " + gender + ", phone: " + phone + ", email " + email + ", description" + description;
+    }
 }

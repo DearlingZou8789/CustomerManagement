@@ -16,11 +16,13 @@ public class Demo
     {
         CustomerDao customerDao=new CustomerDao();
 
-        for (int i=0;i<1000;i++)
+        String[] names = {"zmj", "wjl", "zmj_son", "zmj_daught", "wjl_son", "wjl_daught"};
+        for (int i=0;i<4000;i++)
         {
             Customer customer=new Customer();
             customer.setId(CommonUtils.uuid());
-            customer.setName("customer"+i);
+            int num = (int)Math.random() % (names.length);
+            customer.setName(names[num]+i);
             customer.setGender(i%2==0?"male":"female");
             customer.setPhone("13476"+i);
             customer.setEmail("customer"+i+"@163.com");
